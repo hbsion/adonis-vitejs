@@ -11,8 +11,5 @@
 	"keywords": [
 		"adonis-framework",
 		"vite"
-	],
-	"publishConfig": {
-		"registry": "https://npm.pkg.github.com/@hbsion"
-	}
+	]
 }
