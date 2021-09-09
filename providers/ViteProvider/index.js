@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-const vite = require('vite');
 const { ServiceProvider } = require('@adonisjs/fold');
+const { createServer: createViteServer } = require('vite')
 
 class ViteProvider extends ServiceProvider {
 	/**
@@ -42,7 +42,7 @@ class ViteProvider extends ServiceProvider {
 			const mode = dev ? 'development' : 'production';
 			const dirName = Env.get('VITE_FOLDER', 'vite');
 			const root = Helpers.appRoot(dirName);
-			return vite.createServer({root,mode});
+			return createViteServer({root,mode});
 		});
 
 		this.app.alias('Adonis/Addons/Vite', 'Vite');
@@ -56,7 +56,8 @@ class ViteProvider extends ServiceProvider {
 			return;
 		}
 		
-		await Vite.prepare();
+		const vite = await Vite();
+		this.app.use(vite.middlewares);
 	}
 }
 
