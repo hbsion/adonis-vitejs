@@ -1,0 +1,18 @@
+{
+	"name": "adonis-vitejs",
+	"version": "0.0.1",
+	"author": "hbsion",
+	"license": "MIT",
+	"description": "A provider to initialize vitejs app with adonis.",
+	"bugs": {
+		"url": "https://github.com/hbsion/adonis-vitejs/issues"
+	},
+	"homepage": "https://github.com/hbsion/adonis-vitejs#readme",
+	"keywords": [
+		"adonis-framework",
+		"vite"
+	],
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com/@hbsion"
+	}
+}
